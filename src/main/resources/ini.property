@@ -1,0 +1,4 @@
+[DataBase]!true
+[Url]!jdbc:sqlserver://localhost;database=prog_project;integratedSecurity=true
+[Driver]!com.microsoft.sqlserver.jdbc.SQLServerDriver
+[GI]!false
