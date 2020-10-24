@@ -113,9 +113,10 @@ public class DaoMSQL implements Dao{
         for (int i : shops.keySet()) {
             if (shops.get(i).getName().equals(shopName)) {
                 shopId = i;
+                break;
             }
         }
-        if (shopId != 1) {
+        if (shopId != -1) {
             Goods goods = new Goods(name, shopId, quantity, price);
             if (mode) {
                 try {
@@ -194,7 +195,7 @@ public class DaoMSQL implements Dao{
         return resultArray;
     }
 
-    public float buyGoods(String goodsName, String goodsShop, int quantity) {
+    public float getGoodsPrice(String goodsName, String goodsShop, int quantity) {
         float sum = 0;
         for (int i : shops.keySet()) {
             Shop shop = shops.get(i);
@@ -225,7 +226,7 @@ public class DaoMSQL implements Dao{
         return sum;
     }
 
-    public Pair confirmOperation(String goodsName, String goodsShop, int quantity) {
+    public Pair BuyGoods(String goodsName, String goodsShop, int quantity) {
         Pair response = new Pair(false, null);
         for (int i : shops.keySet()) {
             Shop shop = shops.get(i);

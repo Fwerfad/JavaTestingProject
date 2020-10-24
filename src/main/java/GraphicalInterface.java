@@ -266,7 +266,7 @@ public class GraphicalInterface {
                         JDialog dialog = createDialog(name, shop, number, true);
                         dialog.setVisible(true);
                         dispose();
-                        serv.buyGoods(name.getText(), shop.getText(), Integer.parseInt(number.getText()));
+                        serv.getGoodsPrice(name.getText(), shop.getText(), Integer.parseInt(number.getText()));
                     }
                 });
                 button2.addActionListener(new ActionListener() {
@@ -357,7 +357,7 @@ public class GraphicalInterface {
                 JButton button2 = new JButton("Отменить");
                 button1.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
-                        serv.confirmOperation(str.getText(),str2.getText(),Integer.parseInt(str3.getText()));
+                        serv.BuyGoods(str.getText(),str2.getText(),Integer.parseInt(str3.getText()));
                         dispose();
                     }
                 });

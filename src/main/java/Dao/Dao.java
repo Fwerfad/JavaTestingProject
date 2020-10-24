@@ -14,8 +14,8 @@ public interface Dao {
     void createBackup();
     HashMap<String, Goods> searchByShop(String shopName);
     ArrayList<Shop> searchByGoods(String goodsName);
-    float buyGoods(String goodsName, String goodsShop, int quantity);
-    Pair confirmOperation(String goodsName, String goodsShop, int quantity);
+    float getGoodsPrice(String goodsName, String goodsShop, int quantity);
+    Pair BuyGoods(String goodsName, String goodsShop, int quantity);
     void applyBackup();
     String getCheapest(String name);
     String getGoodsByBudget(int shopId, float cash);

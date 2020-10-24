@@ -1,15 +1,8 @@
 import Service.Service;
 import UtilityClasses.Shop;
 
-import javax.imageio.ImageIO;
-import javax.swing.*;
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.FileReader;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
@@ -80,7 +73,7 @@ public class Main {
                                 shopName = scanner.nextLine();
                                 System.out.println("Введите количество");
                                 int quantity = Integer.parseInt(scanner.nextLine());
-                                float price = service.buyGoods(goodsName, shopName, quantity);
+                                float price = service.getGoodsPrice(goodsName, shopName, quantity);
                                 if (price == -1.0) {
                                     System.out.println("Товара " + goodsName + " нет в " + shopName);
                                 }
@@ -92,7 +85,7 @@ public class Main {
                                         System.out.println("Итоговая цена за " + quantity + " " + goodsName +":" + price);
                                         System.out.print("Подтвердить операцию? Y");
                                         if (scanner.nextLine().equals("Y")) {
-                                            service.confirmOperation(goodsName, shopName, quantity);
+                                            service.BuyGoods(goodsName, shopName, quantity);
                                             System.out.println("С вас " + price + " уе");
                                         }
                                         else {

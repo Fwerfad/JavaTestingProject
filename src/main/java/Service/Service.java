@@ -5,7 +5,6 @@ import UtilityClasses.Goods;
 import UtilityClasses.Pair;
 import UtilityClasses.Shop;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -88,11 +87,11 @@ public class Service {
         return dao.getAverageCheapest(shipment);
     }
 
-    public float buyGoods(String goodsName, String goodsShop, int quantity) {
-        return dao.buyGoods(goodsName, goodsShop, quantity);
+    public float getGoodsPrice(String goodsName, String goodsShop, int quantity) {
+        return dao.getGoodsPrice(goodsName, goodsShop, quantity);
     }
-    public boolean confirmOperation(String goodsName, String goodsShop, int quantity) {
-        Pair response = dao.confirmOperation(goodsName, goodsShop, quantity);
+    public boolean BuyGoods(String goodsName, String goodsShop, int quantity) {
+        Pair response = dao.BuyGoods(goodsName, goodsShop, quantity);
         purchasedGoods.put(response.getValue(), quantity);
         System.out.println(purchasedGoods);
         return response.getKey();
